@@ -3,8 +3,9 @@
     const broadcastMessageToAllClientHubMethodCall = "BroadCastMessageToAllCient";
     const broadcastMessageToCallerClientHubMethodCall = "BroadCastMessageToCallerCient";
     const broadcastMessageToOtherClients = "BroadcastMessageToOthersClient"
+    const broadcastMessageToIndividualClient = "BroadcastMessageToIndividualClient";
 
-
+    const receiveMessageForIndividualClient = "ReceiveMessageForIndividualClient";
     const receiveMessageToAllClientClientMethodCall = "ReceiveMessageForAllClient";
     const receiveConnectedClientCountAllClient = "ReceiveConnectedClientCountAllClient";
     const receiveMessageForCallerClient = "ReceiveMessageForCallerClient";
