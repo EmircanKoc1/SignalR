@@ -84,7 +84,6 @@
 
     });
 
-
     $('#btn-send-message-caller-client').click(function () {
 
         const message = "hello world";
@@ -117,5 +116,18 @@
     });
 
 
+    const groupA = "GroupA";
+    const groupB = "GroupB";
+
+    let currentGroupList = [];
+    function refreshGroupList() {
+
+        $("#groupList").empty();
+        currentGroupList.forEach(x => {
+
+            $("groupList").append(`<p> ${x}<p/>`);
+        })
+
+    }
 
 });

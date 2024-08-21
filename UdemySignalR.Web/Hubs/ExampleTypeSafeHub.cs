@@ -47,6 +47,8 @@ namespace UdemySignalR.Web.Hubs
 
             await Clients.Caller.ReceiveMessageForCallerClient($"gruba dahil oldun : {groupName}");
 
+            await Clients.Others.ReceiveMessageForOthersClient($"kullanıcı : {Context.ConnectionId} , {groupName} grubuna dahil oldu");
+
         }
 
         public async Task RemoveGroup(string groupName)
@@ -55,7 +57,11 @@ namespace UdemySignalR.Web.Hubs
 
             await Clients.Caller.ReceiveMessageForCallerClient($"grubdan ayrıldın : {groupName}");
 
+            await Clients.Others.ReceiveMessageForOthersClient($"kullanıcı : {Context.ConnectionId} , {groupName} grubundan ayrıldı");
+
         }
+
+
 
 
         public override async Task OnConnectedAsync()
