@@ -28,6 +28,34 @@ namespace UdemySignalR.Web.Hubs
         }
 
 
+        public async Task BroadcastMessageToIndividualClient(string connectionId, string message)
+        {
+
+            await Clients.Client(connectionId).ReceiveMessageForIndividualClient(message);
+
+        }
+
+        public async Task BroadcastMessageToGroupClients(string groupName, string message)
+        {
+            await Clients.Group(groupName).ReceiveMessageForGroupClients(message);
+
+        }
+
+        public async Task AddGroup(string groupName)
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
+
+            await Clients.Caller.ReceiveMessageForCallerClient($"gruba dahil oldun : {groupName}");
+
+        }
+
+        public async Task RemoveGroup(string groupName)
+        {
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
+
+            await Clients.Caller.ReceiveMessageForCallerClient($"grubdan ayrıldın : {groupName}");
+
+        }
 
 
         public override async Task OnConnectedAsync()
