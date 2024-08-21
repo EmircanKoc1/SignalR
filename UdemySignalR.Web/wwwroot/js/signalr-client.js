@@ -50,6 +50,10 @@
         console.log("(caller) gelen mesaj", message);
     })
 
+    connection.on(receiveMessageForIndividualClient, (message) => {
+        console.log("(individual) gelen mesaj", message);
+    })
+
 
     const span_client_count = $("#span-connected-client-count");
 
@@ -99,6 +103,18 @@
             .catch(err => console.log("hata", err))
 
     });
+
+    $('#btn-send-message-individual-client').click(function () {
+
+        const connectionId = $('#text-connectionId').val();
+        const message = 'hello worl';
+
+        connection
+            .invoke(broadcastMessageToIndividualClient, connectionId, message)
+            .catch(err => console.log(err));
+
+    });
+
 
 
 });
