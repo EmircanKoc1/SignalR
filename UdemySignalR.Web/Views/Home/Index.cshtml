@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2"> 
-
+            <span id="connectionId"  > </span>
             <button type="button" class="btn btn-primary"> 
                 Connected Count :<span id="span-connected-client-count" class="badge text-bg-secondary"> X</span> 
             </button>
@@ -17,6 +17,12 @@
             <button id="btn-send-message-all-client"> Tüm clientlera gönder  </button>
             <button id="btn-send-message-caller-client"> işlem yapan clienta gönder</button>
             <button id="btn-send-message-others-client"> diğer clientlara gönder</button>
+
+            <div>
+                <input  type="text" id="text-connectionId" placeholder="connection Id"/>
+                <button id="btn-send-message-individual-client"> spesifik clienta gönder</button>
+
+            </div>       
 
         </div>
     </div>
