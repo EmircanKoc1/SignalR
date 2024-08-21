@@ -19,7 +19,15 @@
 
 
     function start() {
-        connection.start().then(() => console.log("hub ile bağlantı kuruldu"));
+
+        connection.start().then(() => {
+
+            console.log("hub ile bağlantı kuruldu");
+            $("#connectionId").html(`Connection Id : ${connection.connectionId}`)
+
+
+        });
+
     }
 
     try {
